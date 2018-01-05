@@ -1,0 +1,15 @@
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title Document
+    body
+        h1 Parkings GENT
+
+        for parkings in parking
+            p #{parkings.name}
+            p #{parkings.address}
+            p VRIJE PLAATSEN : #{parkings.parkingStatus.availableCapacity}
+            p AANTAL PLAATSEN : #{parkings.totalCapacity}
+            p _________________________________________
