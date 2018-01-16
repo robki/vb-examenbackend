@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+
+    a(href='/parkings') GO BACK
+
+    h1 RESERVATIES
+
+    -for(var reservatie in reservaties ){
+        p= reservaties[reservatie].name
+        p= reservaties[reservatie].email
+        p= reservaties[reservatie].parkingId
+        p ______________________________
+    -};

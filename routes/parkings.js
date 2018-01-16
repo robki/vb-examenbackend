@@ -37,5 +37,14 @@ router.post('/savereservatie',function(req,res,next){
     });
 });
 
+router.get('/reservaties', function(req,res,next){
+    Reservatie.getReservatie(function(err,result){
+        if(err) console.error(err);
+        res.render("parkings/overview",{
+            reservaties : result
+        });
+    });
+});
+
 
 module.exports = router;
