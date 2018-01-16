@@ -1,0 +1,19 @@
+extends ../layout
+
+block content
+
+    h1=title
+    form(method='POST' action='/parkings/savereservatie')
+        div.form-group
+            label(for='name') Name:
+            input#name.form-conrol(type='text', placeholder='fill in a name' name='name')
+            div.form-group
+            label(for='email') Email:
+            input#email.form-control(type='email', placeholder='name@email.com' name='email')
+            div.form-group
+            label(for='favoriteBook') Parkeerplaats:
+            select(id="parkeerplaats",name="parkeerplaats")
+                -for(parkings in parking){
+                    option(value="#{parking[parkings].id}")= parking[parkings].name
+                -}
+            button.btn.btn-primary(type='submit') Save

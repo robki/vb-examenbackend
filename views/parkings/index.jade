@@ -7,6 +7,9 @@ html(lang="en")
     body
         h1 Parkings GENT
 
+        div 
+            a(href="/parkings/reservatie") Reserveer nu!
+
         for parkings in parking
             p #{parkings.name}
             p #{parkings.address}
