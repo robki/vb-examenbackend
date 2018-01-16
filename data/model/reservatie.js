@@ -14,4 +14,6 @@ Reservatie.getReservatie = function(callback){
         if(err) callback(err,null);
         callback(null,result);
     });
-}
+};
+
+module.exports = Reservatie;

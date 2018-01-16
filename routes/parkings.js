@@ -1,6 +1,7 @@
 var express = require("express");
 var router = express.Router();
 var request = require('request');
+var Reservatie = require("../data/model/reservatie");
 
 //router.get
 router.get('/', function (req, res) {
@@ -20,8 +21,20 @@ router.get("/reservatie",function(req,res,next){
             res.render("parkings/reservatie", {
                 parking: parkings
             });
-            console.log(parkings);
+            
         });
+});
+
+router.post('/savereservatie',function(req,res,next){
+    let values = {};
+    values.name = req.body.name;
+    values.email = req.body.email;
+    values.parkingId = req.body.parkeerplaats;
+    Reservatie.addReservatie(values,function(err,resultres){
+        if(err) console.error(err);
+
+        res.redirect('/parkings');
+    });
 });
 
 
