@@ -14,6 +14,6 @@ block content
             label(for='favoriteBook') Parkeerplaats:
             select(id="parkeerplaats",name="parkeerplaats")
                 -for(parkings in parking){
-                    option(value="#{parking[parkings].id}")= parking[parkings].name
+                    option(value="#{parking[parkings].name}")= parking[parkings].name
                 -}
             button.btn.btn-primary(type='submit') Save

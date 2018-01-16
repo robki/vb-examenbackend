@@ -29,7 +29,7 @@ router.post('/savereservatie',function(req,res,next){
     let values = {};
     values.name = req.body.name;
     values.email = req.body.email;
-    values.parkingId = req.body.parkeerplaats;
+    values.parkingNaam = req.body.parkeerplaats;
     Reservatie.addReservatie(values,function(err,resultres){
         if(err) console.error(err);
 
